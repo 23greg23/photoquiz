@@ -2,10 +2,8 @@ body {
   font-size: 100%;
   color: #666;
   background-color: #fff;
-}
 
-.ggv, .greyghost {
-	display: none;}
+}
 
 .article-body {
     max-width: 1150px;
@@ -22,18 +20,6 @@ body {
 	width: 98%;
 }
 
-div.revealed_answer.span12.show p, li.span12 {
-	font-family: akkurat,sans-serif;
-	color: #666;}
-
-p.how_you_did {
-	font-family: akkurat,sans-serif;
-	color: #005a00;
-	font-weight:600;
-	font-size: 150%;
-	text-align:center;
-
-}
 
 ul {
     list-style-type: none!important;
@@ -107,7 +93,7 @@ font-size: 1.3em;
 	line-height: 1.5em;
 	padding: 0em 0 0 0;
 	margin: 0;
-	min-height: 4em;
+	min-height: 8em;
 
 }
 
@@ -124,18 +110,12 @@ font-size: 1.3em;
 	background: #62DA97;
 	opacity: .5;
 	cursor: pointer;
-	border: 1px solid #ccc;
-	border-radius: 12px;
-	margin-top: 10px;
 }
 
 .quiz_container .wrong_answer {
 	background: #FF8362;
 	opacity: .5;
 	cursor: pointer;
-	border: 1px solid #ccc;
-	border-radius: 12px;
-	margin-top: 10px;
 }
 
 .quiz_container .selected {
