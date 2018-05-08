@@ -1,11 +1,11 @@
 body {
   font-size: 100%;
-  font-family: "Droid Serif", serif;
   color: #666;
   background-color: #fff;
-  background-image: url('http://huskynunews.wpengine.com/interactive/photoquiz/img/bkg_campus.jpg');
-   background-size: cover;
 }
+
+.ggv, .greyghost {
+	display: none;}
 
 .article-body {
     max-width: 1150px;
@@ -14,7 +14,7 @@ body {
       background-color: rgba(255, 255, 255, 0.7);
 	  border-radius: 25px;
 	padding: 20px;}
-	
+
 .quiz_container {
     list-style-type: none;
 	font-weight: bold;
@@ -22,6 +22,18 @@ body {
 	width: 98%;
 }
 
+div.revealed_answer.span12.show p, li.span12 {
+	font-family: akkurat,sans-serif;
+	color: #666;}
+
+p.how_you_did {
+	font-family: akkurat,sans-serif;
+	color: #005a00;
+	font-weight:600;
+	font-size: 150%;
+	text-align:center;
+
+}
 
 ul {
     list-style-type: none!important;
@@ -52,7 +64,7 @@ ul {
 }
 
 .quiz_container .question_container h1, .question p, .revealed_answer p {
-	line-height: 1.5em;	
+	line-height: 1.5em;
 }
 
 .quiz_container .question_container h1 {
@@ -95,7 +107,7 @@ font-size: 1.3em;
 	line-height: 1.5em;
 	padding: 0em 0 0 0;
 	margin: 0;
-	min-height: 8em;
+	min-height: 4em;
 
 }
 
@@ -112,12 +124,18 @@ font-size: 1.3em;
 	background: #62DA97;
 	opacity: .5;
 	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 12px;
+	margin-top: 10px;
 }
 
 .quiz_container .wrong_answer {
-	background: #FF8362;	
+	background: #FF8362;
 	opacity: .5;
 	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 12px;
+	margin-top: 10px;
 }
 
 .quiz_container .selected {
