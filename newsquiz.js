@@ -13,12 +13,25 @@
                     if (typeof a == "string") return e.make_quiz_from_google_spreadsheet(a), e;
                     e.quiz_data = a, e.create_cover();
                     for (var d = 0; d < e.quiz_data.length; d++) e.append_question(d);
-                    return e.append_how_you_did_section(), e
+                    return e.append_how_you_did_section(), e;
+
+                    // $(".quiz_container").popUpFunction();
                 },
                 append_how_you_did_section: function() {
                     g = jQuery('<span class="correct_answers">0</span>');
-                    var a = jQuery('<p class="how_you_did"></p>');
-                    a.append(jQuery("<span>You got </span>")), a.append(g), a.append(jQuery("<span> correct answers out of " + e.quiz_data.length + " questions.</span>")), cover.append(a), cover.append(jQuery('<p></p>'))
+                    var a = jQuery('<div class="how_you_did"></div>');
+                    var content = jQuery('<div class="result-content"><button class="close">X</button></div>');
+
+                    var twitterUrl = "'https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%253A%252F%252Fnews.northeastern.edu%252F2018%252F05%252F11%252Fthink-you-know-northeastern-test-your-skills-with-this-photo-hunt%252F%26text%3DThink%2520you%2520know%2520Northeastern%253F%2520Test%2520your%2520skills%2520with%2520this%2520photo%2520hunt.','myTwitterWin','width=620,height=350'"
+
+                    var facebookUrl = "'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnews.northeastern.edu%2F2018%2F05%2F11%2Fthink-you-know-northeastern-test-your-skills-with-this-photo-hunt%2F','myFacebookWin','width=620,height=350'"
+
+                    var social = '<ul class="article-footer__socials"><li class="article-topper__social-item article-topper__social-item--twitter "><a class="article-topper__social-link article-topper__social-link--twitter qs-link" data-qs-service="twitter" data-qs-url="https://news.northeastern.edu/2018/05/11/think-you-know-northeastern-test-your-skills-with-this-photo-hunt/" data-qs-title="Campus Photo Hunt" href="javascript:window.open(' + twitterUrl + '); void(0)">Twitter</a></li><li class="article-topper__social-item article-topper__social-item--facebook "><a class="article-topper__social-link article-topper__social-link--facebook qs-link" data-qs-service="facebook-share" data-qs-url="https://news.northeastern.edu/2018/05/11/think-you-know-northeastern-test-your-skills-with-this-photo-hunt/" href="javascript:window.open(' + facebookUrl + '); void(0)">Facebook</a></li></ul>'
+
+                    a.append(content);
+                    content.append(jQuery("<span>You got </span>")), content.append(g), content.append(jQuery("<span> correct answers out of " + e.quiz_data.length + " questions.</span>" + "<div class='social'>" + social + "</div>")), cover.append(a)
+
+                    return popUpFunction();
                 },
                 make_quiz_from_google_spreadsheet: function(a) {
                     Tabletop.init({
@@ -137,7 +150,9 @@
                 }
             };
         return h.init(b, c)
+
     }, a.fn.quiz = function(b, c) {
         return c = c || {}, c.container = this.attr("id"), this.quiz = a.quiz(b, c), this
+
     }
 })(jQuery);

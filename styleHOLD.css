@@ -9,7 +9,7 @@ body {
 
 .ggv, .greyghost {
 	display: none;}
-	
+
 .article-body {
     max-width: 1150px;
     margin: 0 auto;
@@ -17,7 +17,7 @@ body {
       background-color: rgba(255, 255, 255, 0.7);
 	  border-radius: 25px;
 	padding: 20px;}
-	
+
 .quiz_container {
     list-style-type: none;
 	font-weight: bold;
@@ -35,7 +35,7 @@ p.how_you_did {
 	font-weight:600;
 	font-size: 150%;
 	text-align:center;
-	
+
 }
 
 ul {
@@ -67,7 +67,7 @@ ul {
 }
 
 .quiz_container .question_container h1, .question p, .revealed_answer p {
-	line-height: 1.5em;	
+	line-height: 1.5em;
 }
 
 .quiz_container .question_container h1 {
@@ -133,7 +133,7 @@ font-size: 1.3em;
 }
 
 .quiz_container .wrong_answer {
-	background: #FF8362;	
+	background: #FF8362;
 	opacity: .5;
 	cursor: pointer;
 	border: 1px solid #ccc;
