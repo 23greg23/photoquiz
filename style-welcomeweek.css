@@ -74,13 +74,13 @@ font-size: 1.3em;
 .quiz_container .possible_answers.span12 {
 	padding: 0;
 	margin: 0;
+
 }
 
 .quiz_container .possible_answer {
 	background: #fff;
 	margin-left: 0 !important;
 	border: 1px solid #000;
-
 	margin-top: 10px;
 }
 
@@ -98,7 +98,6 @@ font-size: 1.3em;
 	padding: 0em 0 0 0;
 	margin: 0;
 	min-height: 4em;
-
 }
 
 .quiz_container .revealed_answer a {
@@ -146,11 +145,7 @@ font-size: 1.3em;
 
 /*multimedia styling*/
 
-.quiz_container img, .quiz_container .youtube {
-	margin-bottom: 1em;
-	min-height: 200px;
-	max-height: 450px;
-}
+
 
 .quiz_container .possible_answer img {
 	max-height: 18em;
@@ -210,6 +205,23 @@ display: block;
   background-color: #fff;
 
 }
+.photoanswer {
+  float: left;
+  margin-left: 0px;
+  width: 50%;
+  height: auto;
+}
+.mapanswer {
+  float: left;
+  margin: 0px;
+  width: 50%;
+}
+
+.answertop {
+  float: left;
+  width: 100%;
+}
+
 
 @media screen and (min-width: 600px) {
   .how_you_did.quizCompleted {
