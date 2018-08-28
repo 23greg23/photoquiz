@@ -1,0 +1,22 @@
+<html>
+<head>
+    <script src="jquery.js"></script>
+    <script src="tabletop.js"></script>
+	<script src="newsquiz-welcomeweek.js"></script>
+  	<script src="popup1.js"></script>
+
+<!-- bootstrap.min.css is the barebones; bootstrap-responsive.css makes the quiz device-friendly -->
+    <link href="bootstrap.min.css" rel="stylesheet" media="screen">
+
+<!-- Custom stylesheet. Use this or create your own -->
+	<link href="style-welcomeweek.css" rel="stylesheet" media="screen">
+</head>
+    <body>
+
+<!-- tabletop.js renders your spreadsheet data as HTML. Simply add a div below to wrap the whole thing -->
+        <div id="quiz"></div>
+        <script type="text/javascript">
+                var quiz = jQuery('#quiz').quiz('1cNYjmHoKInrKWo6QBztWQkjPdLiUr7jeU-LTjuHT1eo'); //your published spreadsheet key or URL goes here
+        </script>
+    </body>
+</html>
