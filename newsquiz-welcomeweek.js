@@ -20,11 +20,11 @@
                     var a = jQuery('<div class="how_you_did"></div>');
                     var content = jQuery('<div class="result-content"><button class="close">X</button></div>');
 
-                    var twitterUrl = "'https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%253A%252F%252Fnews.northeastern.edu%252F2018%252F05%252F11%252Fthink-you-know-northeastern-test-your-skills-with-this-photo-hunt%252F%26text%3DThink%2520you%2520know%2520Northeastern%253F%2520Test%2520your%2520skills%2520with%2520this%2520photo%2520hunt.','myTwitterWin','width=620,height=350'"
+                    var twitterUrl = "'https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%253A%252F%252Fhuskynunews.wpengine.com%252F2018%252F03%252F15%252Fcampus-photo-hunt%252F%26text%3DCampus%2520Photo%2520Hunt','myTwitterWin','width=620,height=350'"
 
-                    var facebookUrl = "'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnews.northeastern.edu%2F2018%2F05%2F11%2Fthink-you-know-northeastern-test-your-skills-with-this-photo-hunt%2F','myFacebookWin','width=620,height=350'"
+                    var facebookUrl = "'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhuskynunews.wpengine.com%2F2018%2F03%2F15%2Fcampus-photo-hunt%2F','myFacebookWin','width=620,height=350'"
 
-                    var social = '<ul class="article-footer__socials"><li class="article-topper__social-item article-topper__social-item--twitter "><a class="article-topper__social-link article-topper__social-link--twitter qs-link" data-qs-service="twitter" data-qs-url="https://news.northeastern.edu/2018/05/11/think-you-know-northeastern-test-your-skills-with-this-photo-hunt/" data-qs-title="Campus Photo Hunt" href="javascript:window.open(' + twitterUrl + '); void(0)">Twitter</a></li><li class="article-topper__social-item article-topper__social-item--facebook "><a class="article-topper__social-link article-topper__social-link--facebook qs-link" data-qs-service="facebook-share" data-qs-url="https://news.northeastern.edu/2018/05/11/think-you-know-northeastern-test-your-skills-with-this-photo-hunt/" href="javascript:window.open(' + facebookUrl + '); void(0)">Facebook</a></li></ul>'
+                    var social = '<ul class="article-footer__socials"><li class="article-topper__social-item article-topper__social-item--twitter "><a class="article-topper__social-link article-topper__social-link--twitter qs-link" data-qs-service="twitter" data-qs-url="https://huskynunews.wpengine.com/2018/03/15/campus-photo-hunt/" data-qs-title="Campus Photo Hunt" href="javascript:window.open(' + twitterUrl + '); void(0)">Twitter</a></li><li class="article-topper__social-item article-topper__social-item--facebook "><a class="article-topper__social-link article-topper__social-link--facebook qs-link" data-qs-service="facebook-share" data-qs-url="https://huskynunews.wpengine.com/2018/03/15/campus-photo-hunt/" href="javascript:window.open(' + facebookUrl + '); void(0)">Facebook</a></li></ul>'
 
                     a.append(content);
                     content.append(jQuery("<span>You got </span>")), content.append(g), content.append(jQuery("<span> correct answers out of " + e.quiz_data.length + " questions.</span>" + "<div class='social'>" + social + "</div>")), cover.append(a)
@@ -56,17 +56,14 @@
                 make_possible_answer: function(a, b, c) {
                     var d = c ? "correct" : "wrong";
                     return {
-                        answer: a[d + b],
-                        correct: c,
-                        title: e._pull_answer_value_from_spreadsheet(a, "title", b, c),
-                        subhed: e._pull_answer_value_from_spreadsheet(a, "subhed", b, c),
-                        text: e._pull_answer_value_from_spreadsheet(a, "text", b, c),
-                        topimage: e._pull_answer_value_from_spreadsheet(a, "topimage", b, c),
-                        middleimage: e._pull_answer_value_from_spreadsheet(a, "middleimage", b, c),
-                        youtube: e.pull_youtube_id(e._pull_answer_value_from_spreadsheet(a, "youtube", b, c)),
-                        map: e._pull_answer_value_from_spreadsheet(a, "map", b, c),
-                        backgroundimage: e._pull_answer_value_from_spreadsheet(a, "backgroundimage", b, c)
-                    }
+                      answer: a[d + b],
+                      correct: c,
+                      title: e._pull_answer_value_from_spreadsheet(a, "title", b, c),
+                      text: e._pull_answer_value_from_spreadsheet(a, "text", b, c),
+                      middleimage: e._pull_answer_value_from_spreadsheet(a, "middleimage", b, c),
+                      map: e._pull_answer_value_from_spreadsheet(a, "map", b, c),
+                      backgroundimage: e._pull_answer_value_from_spreadsheet(a, "backgroundimage", b, c)
+                  }
                 },
                 make_quiz_data_from_spreadsheet_data: function(a) {
                     var b = [];
@@ -87,12 +84,10 @@
                         var l = {
                             question: {
                                 title: d.questiontitle,
-                                subhed: d.questionsubhed,
                                 text: d.questiontext,
-                                topimage: d.questiontopimage,
                                 middleimage: d.questionmiddleimage,
-                                youtube: e.pull_youtube_id(d.questionyoutube),
                                 map: d.questionmap,
+                                bottomimage: d.questionbottomimage,
                                 backgroundimage: d.questionbackgroundimage
                             },
                             possible_answers: j,
@@ -112,12 +107,12 @@
                     c.append(e.build_question_element_from_row(b)), c.append(e.build_revealed_answer_element_from_row(b)), c.append(e.build_possible_answer_elements_from_row(b, a)), d.append(c)
                 },
                 build_question_element_from_row: function(a) {
-                    var b = a.question;
-                    return jQuery('<div class="question span12 show" ' + (b.backgroundimage ? "style=\"background-image: url('" + b.backgroundimage + "');\">" : ">") + (b.topimage ? '<img src="' + b.topimage + '" class="topimage"></img>' : "") + (b.title ? "<h1>" + b.title + "</h1>" : "") + (b.middleimage ? '<img src="' + b.middleimage + '" class="middleimage"></img>' : "") + "<p>" + b.text + "</p>" + "</div>")
+                  var b = a.question;
+                  return jQuery('<div class="question span12 show" ' + (b.backgroundimage ? "style=\"background-image: url('" + b.backgroundimage + "');\">" : ">") + (b.topimage ? '<img src="' + b.topimage + '" class="topimage"></img>' : "") + (b.title ? "<h1>" + b.title + "</h1>" : "") + (b.middleimage ? '<img src="' + b.middleimage + '" class="middleimage"></img>' : "") + "<p>" + b.text + "</p>" + "</div>")
                 },
                 build_revealed_answer_element_from_row: function(a) {
                     var b = jQuery('<div class="revealed_answers_container_' + a.rowNumber + '"></div>');
-                    for (var c = 0; c < a.possible_answers.length; c++) answer = a.possible_answers[c], b.append(jQuery('<div class="revealed_answer_' + c + ' revealed_answer span12 hide" ' + (answer.backgroundimage ? "style=\"background-image: url('" + answer.backgroundimage + "');\">" : ">") + (answer.middleimage ? '<div class="answertop"><div class="photoanswer"><img src="' + answer.middleimage + '" class="middleimage"></img></div>' : "") + (answer.map ? '<div class="mapanswer"><iframe width="350px" height="400px" src=" '+ answer.map +' "></iframe></div></div>' : "") + "<p>" + answer.text + "</p>" ));
+                    for (var c = 0; c < a.possible_answers.length; c++) answer = a.possible_answers[c], b.append(jQuery('<div class="revealed_answer_' + c + ' revealed_answer span12 hide" ' + (answer.backgroundimage ? "style=\"background-image: url('" + answer.backgroundimage + "');\">" : ">") + (answer.title ? "<h1>" + answer.title + "</h1>" : "") + (answer.middleimage ? '<img src="' + answer.middleimage + '" class="middleimage"></img>' : "") + (answer.map ? '<div class="mapanswer"><iframe width="100%" height="400px" src=" '+ answer.map +' "></iframe></div>' : "") + "<p>" + answer.text + "</p>" + "</div>"));
                     return b
                 },
                 build_possible_answer_elements_from_row: function(b, c) {
