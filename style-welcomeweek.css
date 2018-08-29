@@ -190,12 +190,10 @@ display: block;
   opacity: 1;
   z-index: 99999;
   z-index: 9999;
-  width: 300px;
-  height: 400px;
-  position: fixed;
-  top: calc(50% - 200px);
-  left: calc(50% - 150px);
-  background-color: #fff;
+  width: 100%;
+  height: 300px;
+  background-color: rgba(255, 255, 243, 0.8);
+  border: 1px solid #ccc;
 }
 
 .result-content {
@@ -203,8 +201,17 @@ display: block;
   vertical-align: middle;
   z-index: 9999;
   position: relative;
-  background-color: #fff;
+  background-color: rgba(255, 255, 243, 0.8);
 
+}
+.XXXclose {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: #cc0000;
+  opacity: 1;
+  font-size: 20px;
 }
 .photoreveal {
   float: left;
@@ -214,7 +221,7 @@ display: block;
 }
 .mapanswer {
 float: right;
-margin: -400px 0px 0px 0px;
+margin: -401px 0px 0px 0px;
 width: 50%;
 }
 .answertop {
@@ -229,15 +236,12 @@ width: 50%;
 
 @media screen and (max-width: 600px) {
   .how_you_did.quizCompleted {
-    width: 600px;
-    height: 400px;
-    position: fixed;
-    top: calc(50% - 200px);
-    left: calc(50% - 300px);
+width: 100%;
+height: 300px;
+padding: 1em;
   }
-}
 
-.how_you_did.quizCompleted:before {
+.XXXhow_you_did.quizCompleted:before {
   position: fixed;
   z-index: 9998;
   top: 0;
@@ -249,17 +253,21 @@ width: 50%;
   background-color: rgba(0,0,0,0.8);
 }
 
-.close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  color: #000;
-  opacity: 1;
-  font-size: 30px;
+button {
+  border-radius: 20;
 }
 
-.social {
+.XXXclose {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: #cc0000;
+  opacity: 1;
+  font-size: 20px;
+}
+
+.XXXsocial {
   position: absolute;
   bottom: 70px;
   right: 10px;
@@ -275,8 +283,10 @@ float: left;
 margin: 0px 0px 0px 0px;
 width: 100%;
 }
+}
+
 @media screen and (min-width: 768px) {
-  .social {
+  .XXXsocial {
     bottom: 115px;
   }
 }
