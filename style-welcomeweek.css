@@ -23,8 +23,13 @@ body {
 
 .article-body h3 {
     margin-top: 0px;
+    font-size: 1.4em;
 }
-
+ .correct_answers {
+    margin-top: 0px;
+    font-size: 1.5em;
+     color: #cc0000;
+}
 ul {
     list-style-type: none!important;
     margin: 0;
@@ -177,8 +182,8 @@ display: block;
 .how_you_did {
   position: fixed;
   z-index: -1;
-  top: 0;
-  left: 0;
+  top: 150px;
+  left: 23%;
   opacity: 0;
 	text-align:center;
 	font-size:16px;
@@ -190,29 +195,37 @@ display: block;
   opacity: 1;
   z-index: 99999;
   z-index: 9999;
-  width: 100%;
-  height: 300px;
-  background-color: rgba(255, 255, 243, 0.8);
-  border: 1px solid #ccc;
+  width: 50%;
+  height: 250px;
+  background-color: rgba(255, 255, 243, 0.7);
+  border: 2px solid #ccc;
 }
 
+button {
+    font-size: 14px;
+    padding: .8em 10px;
+    color: #333;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    border: 2px solid #ccc;
+    background-color: transparent;
+    text-decoration: none;
+}
+XXXbutton.close {
+    position: relative;
+    z-index: -1;
+    bottom: -150px;
+    right: -44%;
+}
 .result-content {
   display: table-cell;
   vertical-align: middle;
   z-index: 9999;
   position: relative;
-  background-color: rgba(255, 255, 243, 0.8);
+  background-color: rgba(255, 255, 243, 0.7);
 
 }
-.XXXclose {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  cursor: pointer;
-  color: #cc0000;
-  opacity: 1;
-  font-size: 20px;
-}
+
 .photoreveal {
   float: left;
   margin-left: 0px;
@@ -231,46 +244,33 @@ width: 50%;
 .blue {
   color: blue;}
 
-
-
+@media screen and (max-width: 768px) {
+.article-body h3 {
+    font-size: 1.2em;
+}
+ .correct_answers {
+    font-size: 1.2em;
+}
+XXXbutton.close {
+bottom: -140px;
+}
+}
 
 @media screen and (max-width: 600px) {
-  .how_you_did.quizCompleted {
-width: 100%;
-height: 300px;
-padding: 1em;
-  }
-
-.XXXhow_you_did.quizCompleted:before {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  display: block;
-  content: " ";
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.8);
+.how_you_did {
+left: 18%;}
+.how_you_did.quizCompleted {
+width: 60%;
+    }
+.article-body h3 {
+font-size: 1em;
 }
-
-button {
-  border-radius: 20;
+ .correct_answers {
+font-size: 1em;
 }
-
-.XXXclose {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  cursor: pointer;
-  color: #cc0000;
-  opacity: 1;
-  font-size: 20px;
-}
-
-.XXXsocial {
-  position: absolute;
-  bottom: 70px;
-  right: 10px;
+XXXbutton.close {
+bottom: -130px;
+right: -40%;
 }
 .photoreveal {
   float: left;
@@ -285,8 +285,3 @@ width: 100%;
 }
 }
 
-@media screen and (min-width: 768px) {
-  .XXXsocial {
-    bottom: 115px;
-  }
-}

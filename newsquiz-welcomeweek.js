@@ -27,7 +27,7 @@
                     var social = '<ul class="article-footer__socials"><li class="article-topper__social-item article-topper__social-item--twitter "><a class="article-topper__social-link article-topper__social-link--twitter qs-link" data-qs-service="twitter" data-qs-url="https://huskynunews.wpengine.com/2018/03/15/campus-photo-hunt/" data-qs-title="Campus Photo Hunt" href="javascript:window.open(' + twitterUrl + '); void(0)">Twitter</a></li><li class="article-topper__social-item article-topper__social-item--facebook "><a class="article-topper__social-link article-topper__social-link--facebook qs-link" data-qs-service="facebook-share" data-qs-url="https://huskynunews.wpengine.com/2018/03/15/campus-photo-hunt/" href="javascript:window.open(' + facebookUrl + '); void(0)">Facebook</a></li></ul>'
 
                     a.append(content);
-                    content.append(jQuery("<span>You got </span>")), content.append(g), content.append(jQuery("<span> correct answers out of " + e.quiz_data.length + " questions.</span>" + "<div class='social'>" + social + "</div>")), cover.append(a)
+                    content.append(jQuery("<span><h3>Great job! You got </h3></span>")), content.append(g), content.append(jQuery("<span> <h3>correct answers out of " + e.quiz_data.length + " questions.</h3></span>" + "<div class='social'>" + social + "</div>")), cover.append(a)
 
                     return popUpFunction();
                 },
